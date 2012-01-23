@@ -21,3 +21,8 @@
 		    (setf (return-code*) +http-not-found+)
 		    ""))))
 	  *dispatch-table*)))
+
+(defun publish-capabilities (ocaps)
+  (mapcar (lambda (ocap)
+	    (integer-to-base64-string (register-capability ocap)))
+	  ocaps))
