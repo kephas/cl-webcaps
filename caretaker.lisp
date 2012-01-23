@@ -12,11 +12,9 @@
 	 data))
      (lambda ()
        (setf web-client
-	     (lambda () (values "" 501 nil)))
+	     (lambda () (values "" +http-gone+ nil)))
        (with-html-output-to-string (out)
 	 (:html
 	  (:head (:title "Rescinded"))
 	  (:body
-	   (:p "The caretaker to "
-	       (:code (esc uri))
-	       " has been rescinded!"))))))))
+	   (:p "The caretaker has been rescinded!"))))))))
